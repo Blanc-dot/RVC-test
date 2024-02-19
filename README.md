@@ -16,3 +16,6 @@ cry yourself to sleep if you use RVC Realtime as they are forcing you to sign up
 
 # 5. 
 Ackshually have you tried running the file??
+
+# 6.
+if you care for realtime and dont want to install everything else, just use okada either from following https://rentry.co/VoiceChangerGuide this guide, and or felts github repo that installs it manually listed here https://github.com/MrFelt/voice-changer
