@@ -22,9 +22,9 @@ if __name__ == "__main__":
     print("Downloading rmvpe.pt...")
     dl_model(RVC_DOWNLOAD_LINK, "rmvpe.pt", BASE_DIR / "assets/rmvpe")
 
-    rvc_models_dir = BASE_DIR / "assets/pretrained"
+    rvc_models_dir = BASE_DIR / "assets/pretrained_v2"
 
-    print("Downloading pretrained models:")
+    print("Downloading pretrained v2 models:")
 
     model_names = [
         "D32k.pth",
@@ -42,14 +42,8 @@ if __name__ == "__main__":
     ]
     for model in model_names:
         print(f"Downloading {model}...")
-        dl_model(RVC_DOWNLOAD_LINK + "pretrained/", model, rvc_models_dir)
+        dl_model(RVC_DOWNLOAD_LINK + "pretrained_v2/", model, rvc_models_dir)
 
     rvc_models_dir = BASE_DIR / "assets/pretrained_v2"
-
-    print("Downloading pretrained models v2:")
-
-    for model in model_names:
-        print(f"Downloading {model}...")
-        dl_model(RVC_DOWNLOAD_LINK + "pretrained_v2/", model, rvc_models_dir)
 
     print("All models downloaded!")
