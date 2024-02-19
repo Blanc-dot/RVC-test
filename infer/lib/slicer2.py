@@ -39,11 +39,11 @@ class Slicer:
     def __init__(
         self,
         sr: int,
-        threshold: float = -40.0,
-        min_length: int = 5000,
-        min_interval: int = 300,
-        hop_size: int = 20,
-        max_sil_kept: int = 5000,
+        threshold: float = -50.0,
+        min_length: int = 1000,
+        min_interval: int = 80,
+        hop_size: int = 5,
+        max_sil_kept: int = 25,
     ):
         if not min_length >= min_interval >= hop_size:
             raise ValueError(
@@ -195,35 +195,35 @@ def main():
         "--db_thresh",
         type=float,
         required=False,
-        default=-40,
+        default=-50,
         help="The dB threshold for silence detection",
     )
     parser.add_argument(
         "--min_length",
         type=int,
         required=False,
-        default=5000,
+        default=1000,
         help="The minimum milliseconds required for each sliced audio clip",
     )
     parser.add_argument(
         "--min_interval",
         type=int,
         required=False,
-        default=300,
+        default=80,
         help="The minimum milliseconds for a silence part to be sliced",
     )
     parser.add_argument(
         "--hop_size",
         type=int,
         required=False,
-        default=10,
+        default=5,
         help="Frame length in milliseconds",
     )
     parser.add_argument(
         "--max_sil_kept",
         type=int,
         required=False,
-        default=500,
+        default=25,
         help="The maximum silence length kept around the sliced clip, presented in milliseconds",
     )
     args = parser.parse_args()
