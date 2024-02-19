@@ -1,8 +1,8 @@
 @echo off
 
 :: Set the name of your virtual environment folder
-set VENV_DIR=%~dp0\rvc\venv\
-set REPO_DIR=%~dp0\rvc\
+set VENV_DIR=%~dp0\venv\
+set REPO_DIR=%~dp0\
 set REPO_URL=https://github.com/Enrop/RVC-test
 
 
@@ -17,7 +17,7 @@ if exist %REPO_DIR% (
     )
 ) else (
     echo "Directory '%REPO_DIR%' does not exist. Cloning repository..."
-	git clone %REPO_URL% rvc
+	git clone %REPO_URL%
     if %ERRORLEVEL% NEQ 0 (
         pause
     ) 
