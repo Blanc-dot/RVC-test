@@ -1,8 +1,11 @@
 @echo off
 setlocal
 
+REM Define the directory for the virtual environment
+set venv_dir=%~dp0\tensorboard_venv
+
 REM Check if tensorboard_venv exists in the root directory
-if not exist "%~dp0\tensorboard_venv\" (
+if not exist "%venv_dir%\" (
     REM Print the step to the terminal
     echo Installing virtualenv...
 
@@ -13,13 +16,13 @@ if not exist "%~dp0\tensorboard_venv\" (
     echo Creating a virtual environment named tensorboard_venv...
 
     REM Create a virtual environment named tensorboard_venv in the root directory
-    python -m virtualenv %~dp0\tensorboard_venv
+    python -m virtualenv "%venv_dir%"
 
     REM Print the step to the terminal
     echo Activating the virtual environment...
 
     REM Activate the virtual environment
-    call %~dp0\tensorboard_venv\Scripts\activate
+    call "%venv_dir%\Scripts\activate"
 
     REM Print the step to the terminal
     echo Installing TensorBoard into the virtual environment...
@@ -29,17 +32,14 @@ if not exist "%~dp0\tensorboard_venv\" (
 
     REM Downgrade problematic packages
     echo Downgrading packages for troubleshooting...
-    pip install markdown==3.0
-    pip install tensorboard==2.1.0
-    pip install protobuf==3.11.0
-    pip install numpy==1.19.5
+    pip install markdown==3.0 tensorboard==2.1.0 protobuf==3.11.0 numpy==1.19.5
 
 ) else (
     REM Print the step to the terminal
     echo tensorboard_venv already exists, skipping creation and activation...
 
     REM Activate the existing virtual environment
-    call %~dp0\tensorboard_venv\Scripts\activate
+    call "%venv_dir%\Scripts\activate"
 )
 
 REM Print the step to the terminal
