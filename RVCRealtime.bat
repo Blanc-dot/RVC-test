@@ -53,7 +53,9 @@ call %VENV_DIR%\Scripts\activate.bat
 cd %REPO_DIR%
 python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 python -m pip install fairseq==0.12.2
+python -m pip install -r requirements.txt
 python -m pip install -r requirements-win-for-realtime_vc_gui.txt
+python tools/download_models.py
 
 
 
