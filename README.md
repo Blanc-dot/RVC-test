@@ -1,4 +1,4 @@
-# 1. Stealing Felts Idea
+# 1. Stealing an Idea
 
 
 # 2. 
