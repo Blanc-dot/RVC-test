@@ -22,3 +22,10 @@ If you want to use official repo change bat url from this repo to https://github
 
 # 7.
 if you care for realtime and dont want to install everything else, just use okada either from following https://rentry.co/VoiceChangerGuide this guide, and or felts github repo that installs it manually listed here https://github.com/MrFelt/voice-changer
+
+# 8. 
+Bonus tip, if you are on win11, and have the "Terminal" app, you can create a shortcut to your bat file of choice and change the target to the following line
+
+%LOCALAPPDATA%\Microsoft\WindowsApps\wt.exe -w _quake "C:\Path\To\File.bat"
+
+what this allows is the terminal app to be run in a quake window, aka a window that appears from the top of your screen, you can edit the keybind to toggle hide it from the terminal, thus having no visible window shown while training, or if voice changing only the PySimpleGUI or Chrome based browser tab if on Okada.
