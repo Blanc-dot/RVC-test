@@ -12,7 +12,34 @@ install -> https://github.com/git-for-windows/git/releases/download/v2.43.0.wind
 install -> https://aka.ms/vs/17/release/vs_BuildTools.exe with the optional boxes named "MSVC VS 2022" and "Windows 11 SDK"
 
 # 4.
-cry yourself to sleep if you use RVC Realtime as they are forcing you to sign up or if big corpo pay money like a simp
+python tools/download_models.py if doesnt work go to https://huggingface.co/lj1995/VoiceConversionWebUI/tree/main/ and manually download the files
+
+```
+./assets/hubert/hubert_base.pt
+
+./assets/pretrained 
+
+./assets/uvr5_weights
+
+Additional downloads are required if you want to test the v2 version of the model.
+
+./assets/pretrained_v2
+
+If you want to test the v2 version model (the v2 version model has changed the input from the 256 dimensional feature of 9-layer Hubert+final_proj to the 768 dimensional feature of 12-layer Hubert, and has added 3 period discriminators), you will need to download additional features
+
+./assets/pretrained_v2
+
+If you want to use the latest SOTA RMVPE vocal pitch extraction algorithm, you need to download the RMVPE weights and place them in the RVC root directory
+
+https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/rmvpe.pt
+
+    For AMD/Intel graphics cards users you need download:
+
+    https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/rmvpe.onnx
+
+```
+
+https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/en/README.en.md#preparation-of-other-pre-models
 
 # 5.
 You will always launch from bat's acquired in step 2 (1), unless you modify url to be from the standard repo, then you have a choice of continuing to grab custom ui from next step, and it changes how you'd launch.
